@@ -1,6 +1,6 @@
 # WekaGo 1.0
 
-A simple Go wrapperaround the Weka Java command-line interface supporting basic classification tasks.
+A simple Go wrapper around the Weka Java command-line interface supporting basic classification tasks.
 
 The library abstracts the use of ARFF files and allows users to integrate some of Weka's features programmatically and directly within a Go project.
 
@@ -35,7 +35,7 @@ model := wekago.NewModel("bayes.BayesNet")
 
 
 ### Model training
-To train a model, `model` needs to be supplied with a series of feature instances. Individual features can be created by identifying a feature name, value, and the ARFF representation of the feature data type (e.g. `'real'` `'{true, false}`, etc.):
+To train a model, `model` needs to be supplied with a series of feature instances. Individual features can be created by identifying a feature name, value, and the ARFF representation of the feature data type (e.g. `'real'` `'{true, false}'`, etc.):
 
 ```go
 feature1 := wekago.NewFeature("rain", "true", "{true, false}")
