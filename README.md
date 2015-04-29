@@ -39,7 +39,7 @@ To train a model, `model` needs to be supplied with a series of feature instance
 
 ```go
 feature1 := wekago.NewFeature("rain", "true", "{true, false}")
-feature2 := wekago.NewFeature("grass, "wet", "{wet, dry}")
+feature2 := wekago.NewFeature("grass", "wet", "{wet, dry}")
 
 ...
 ```
