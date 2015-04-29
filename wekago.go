@@ -1,7 +1,6 @@
 package wekago
 
 import (
-        "fmt"
         "os/exec"
         "os"
         "io/ioutil"
@@ -133,7 +132,7 @@ func (m *model) Train() error{
     return nil
 }
 
-func (m *model) LoadModel(model_file string) error{
+func (m *model) LoadModel(model_file string){
     m.model_file = model_file
     m.trained = true
 }
