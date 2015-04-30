@@ -40,18 +40,17 @@ To train a model, `model` needs to be supplied with a series of feature instance
 ```go
 feature1 := wekago.NewFeature("rain", "true", "{true, false}")
 feature2 := wekago.NewFeature("grass", "wet", "{wet, dry}")
-
 ...
 ```
 
-To identify features that belong together, they need to be added to an instance:
+You can then declare the features that belong together as an instance. The outcome feature should be added last:
 
 ```go
 instance1 := wekago.NewInstance()
 instance1.AddFeature(feature1)
 instance1.AddFeature(feature2)
 
-instance2 := wekago.NewFeature()
+instance2 := wekago.NewInstance()
 ...
 ```
 
@@ -60,7 +59,6 @@ Once you have a series of training feature instances, they can be added directly
 ```go
 model.AddTrainingInstance(instance1)
 model.AddTrainingInstance(instance2)
-
 ...
 ```
 
@@ -77,6 +75,8 @@ Alternatively, if you already have a model you have built before then you can lo
 model.LoadModel("/path/to/model")
 ```
 
+Loading models directly means you do not need to create and add training feature instances.
+
 
 ### Model testing
 Adding test features is almost exactly the same as adding training features, except, if the value of the outcome feature (the last one added to an instance) is unknown, then replace its value with a `"?"`. Then use `model`'s `AddTestingInstance()` method to add instances of such feature sets:
@@ -84,17 +84,14 @@ Adding test features is almost exactly the same as adding training features, exc
 ```go
 test_feature1 := wekago.NewFeature("rain", "true", "{true, false}")
 test_feature2 := wekago.NewFeature("grass", "?", "{wet, dry}")
-
 ...
 
 test_instance1 := wekago.NewInstance()
 test_instance1.AddFeature(test_feature1)
 test_instance1.AddFeature(test_feature2)
-
 ...
 
 model.AddTestingInstance(test_instance1)
-
 ...
 ```
 
