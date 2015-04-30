@@ -124,3 +124,8 @@ In addition to `Predicted_value`, there are other fields are available in this s
 * `Index` - the number of the prediction corresponding to the position of the corresponding input test eature instance
 * `Observed_value` - the observed value of the corresponding test instance (equal to `"?"` where this was unknown)
 * `Predicted_value` - the predicted value of this instance
+
+
+## Licensing
+
+The software in this repository is released under the terms of the Apache License Version 2.0. For the full text of the license, please see [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
